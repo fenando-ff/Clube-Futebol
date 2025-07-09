@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+.env/
+*.env
+pip-log.txt
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static/
+
+# Migrations (opcional, se você quer ignorar as migrações)
+# **Descomente a linha abaixo se quiser ignorar as migrações**
+# */migrations/*.py
+# */migrations/*.pyc
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Test/cache folders
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.coverage.*
+.cache
+nosetests.xml
+test-results.xml
+junit.xml
+
+# Build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Celery beat schedule file
+celerybeat-schedule
