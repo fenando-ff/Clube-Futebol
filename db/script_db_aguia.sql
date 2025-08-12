@@ -26,20 +26,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `projeto_aguia`.`ENDERECO_CLIENTE`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `projeto_aguia`.`ENDERECO_CLIENTE` (
-  `id_ENDERECO_CLIENTE` INT NOT NULL AUTO_INCREMENT,
-  `cep_ENDERECO_CLIENTE` VARCHAR(8) NOT NULL,
-  `complemento_ENDERECO_CLIENTE` VARCHAR(45) NOT NULL,
-  `bairro_ENDERECO_CLIENTE` VARCHAR(45) NOT NULL,
-  `casa_ENDERECO_CLIENTE` VARCHAR(45) NOT NULL,
-  `rua_ENDERECO_CLIENTE` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_ENDERECO_CLIENTE`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `projeto_aguia`.`CLIENTES`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `projeto_aguia`.`CLIENTES` (
@@ -69,6 +55,26 @@ CREATE TABLE IF NOT EXISTS `projeto_aguia`.`CLIENTES` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `projeto_aguia`.`ENDERECO_CLIENTE`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `projeto_aguia`.`ENDERECO_CLIENTE` (
+  `id_ENDERECO_CLIENTE` INT NOT NULL AUTO_INCREMENT,
+  `cep_ENDERECO_CLIENTE` VARCHAR(8) NOT NULL,
+  `complemento_ENDERECO_CLIENTE` VARCHAR(45) NOT NULL,
+  `bairro_ENDERECO_CLIENTE` VARCHAR(45) NOT NULL,
+  `casa_ENDERECO_CLIENTE` VARCHAR(45) NOT NULL,
+  `rua_ENDERECO_CLIENTE` VARCHAR(45) NOT NULL,
+  `CLIENTES_id_CLIENTES` INT NOT NULL,
+  PRIMARY KEY (`id_ENDERECO_CLIENTE`),
+  CONSTRAINT `fk_CLIENTES_id_CLIENTES`
+    FOREIGN KEY (`CLIENTES_id_CLIENTES`)
+    REFERENCES `projeto_aguia`.`CLIENTES` (`id_CLIENTES`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+  )
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `projeto_aguia`.`SETOR_FUNCIONARIOS`
