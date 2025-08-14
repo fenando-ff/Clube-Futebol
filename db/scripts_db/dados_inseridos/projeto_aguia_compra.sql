@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: projeto_aguia
 -- ------------------------------------------------------
--- Server version	8.0.31
+-- Server version	8.0.42
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,32 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `compra`
---
-
-DROP TABLE IF EXISTS `compra`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `compra` (
-  `PRODUTOS_id_PRODUTOS` int NOT NULL,
-  `PEDIDO_id_PEDIDO` int NOT NULL,
-  `quantidade_PEDIDO` int NOT NULL,
-  `valor_compra` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`PRODUTOS_id_PRODUTOS`,`PEDIDO_id_PEDIDO`),
-  KEY `fk_PRODUTOS_has_PEDIDO_PEDIDO1_idx` (`PEDIDO_id_PEDIDO`),
-  KEY `fk_PRODUTOS_has_PEDIDO_PRODUTOS1_idx` (`PRODUTOS_id_PRODUTOS`),
-  CONSTRAINT `fk_PRODUTOS_has_PEDIDO_PEDIDO1` FOREIGN KEY (`PEDIDO_id_PEDIDO`) REFERENCES `pedido` (`id_PEDIDO`),
-  CONSTRAINT `fk_PRODUTOS_has_PEDIDO_PRODUTOS1` FOREIGN KEY (`PRODUTOS_id_PRODUTOS`) REFERENCES `produtos` (`id_PRODUTOS`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `compra`
 --
 
 LOCK TABLES `compra` WRITE;
 /*!40000 ALTER TABLE `compra` DISABLE KEYS */;
-INSERT INTO `compra` VALUES (1,87,5,1755);
+INSERT INTO `compra` VALUES (1,87,5,1755.00),(1,93,9,22.10),(1,133,3,110.99),(2,95,4,18.90),(2,120,7,21.80),(2,135,9,240.60),(3,87,5,49.90),(3,122,4,37.45),(4,89,7,99.99),(4,129,5,89.99),(5,91,6,65.40),(5,126,9,91.25),(5,136,1,71.10),(6,90,1,12.75),(7,119,6,95.30),(8,130,7,206.15),(9,92,3,33.20),(9,96,8,79.50),(10,134,8,93.70),(11,123,8,16.90),(13,124,2,84.70),(13,128,4,130.80),(14,127,1,28.60),(17,121,3,73.99),(22,125,6,191.95),(23,97,1,25.60),(24,88,2,15.50),(25,131,2,76.40),(28,118,5,14.75),(29,137,2,29.80),(30,132,6,31.50),(31,94,2,88.00);
 /*!40000 ALTER TABLE `compra` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-11 17:35:25
+-- Dump completed on 2025-08-14 11:21:23
