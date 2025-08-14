@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: projeto_aguia
 -- ------------------------------------------------------
--- Server version	8.0.31
+-- Server version	8.0.42
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,27 +16,24 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `clientes`
+-- Table structure for table `endereco_cliente`
 --
 
-DROP TABLE IF EXISTS `clientes`;
+DROP TABLE IF EXISTS `endereco_cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `clientes` (
-  `id_CLIENTES` int NOT NULL AUTO_INCREMENT,
-  `senha_CLIENTES` varchar(20) NOT NULL,
-  `sexo_CLIENTES` varchar(20) NOT NULL,
-  `telefone_CLIENTES` varchar(15) NOT NULL,
-  `email_CLIENTES` varchar(50) NOT NULL,
-  `nome_CLIENTES` varchar(45) NOT NULL,
-  `sobrenome_CLIENTES` varchar(45) NOT NULL,
-  `cpf_CLIENTES` varchar(14) NOT NULL,
-  `status_CLIENTES` tinyint NOT NULL,
-  `CATEGORIA_CLIENTE_id_CATEGORIA_CLIENTE` int NOT NULL,
-  PRIMARY KEY (`id_CLIENTES`),
-  KEY `fk_CLIENTES_CATEGORIA_CLIENTE1_idx` (`CATEGORIA_CLIENTE_id_CATEGORIA_CLIENTE`),
-  CONSTRAINT `fk_CLIENTES_CATEGORIA_CLIENTE1` FOREIGN KEY (`CATEGORIA_CLIENTE_id_CATEGORIA_CLIENTE`) REFERENCES `categoria_cliente` (`id_CATEGORIA_CLIENTE`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `endereco_cliente` (
+  `id_ENDERECO_CLIENTE` int NOT NULL AUTO_INCREMENT,
+  `cep_ENDERECO_CLIENTE` varchar(8) NOT NULL,
+  `complemento_ENDERECO_CLIENTE` varchar(45) NOT NULL,
+  `bairro_ENDERECO_CLIENTE` varchar(45) NOT NULL,
+  `casa_ENDERECO_CLIENTE` varchar(45) NOT NULL,
+  `rua_ENDERECO_CLIENTE` varchar(45) NOT NULL,
+  `cliente_id_cliente` int NOT NULL,
+  PRIMARY KEY (`id_ENDERECO_CLIENTE`),
+  KEY `fk_cliente_endereco` (`cliente_id_cliente`),
+  CONSTRAINT `fk_cliente_endereco` FOREIGN KEY (`cliente_id_cliente`) REFERENCES `clientes` (`id_CLIENTES`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +45,4 @@ CREATE TABLE `clientes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-12 17:50:39
+-- Dump completed on 2025-08-14 10:53:09

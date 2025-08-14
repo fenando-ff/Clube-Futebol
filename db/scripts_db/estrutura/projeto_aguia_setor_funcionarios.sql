@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: projeto_aguia
 -- ------------------------------------------------------
--- Server version	8.0.31
+-- Server version	8.0.42
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,17 +16,18 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categoria_produtos`
+-- Table structure for table `setor_funcionarios`
 --
 
-DROP TABLE IF EXISTS `categoria_produtos`;
+DROP TABLE IF EXISTS `setor_funcionarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `categoria_produtos` (
-  `id_CATEGORIA_PRODUTOS` int NOT NULL AUTO_INCREMENT,
-  `nome_CATEGORIA_PRODUTOS` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_CATEGORIA_PRODUTOS`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `setor_funcionarios` (
+  `id_SETOR_FUNCIONARIOS` int NOT NULL AUTO_INCREMENT,
+  `nome_SETOR_FUNCIONARIOS` varchar(45) NOT NULL,
+  `descricao_setor` mediumtext NOT NULL,
+  PRIMARY KEY (`id_SETOR_FUNCIONARIOS`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -38,4 +39,4 @@ CREATE TABLE `categoria_produtos` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-12 17:50:40
+-- Dump completed on 2025-08-14 10:53:09

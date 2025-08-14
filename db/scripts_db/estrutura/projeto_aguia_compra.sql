@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: projeto_aguia
 -- ------------------------------------------------------
--- Server version	8.0.31
+-- Server version	8.0.42
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,25 +16,23 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `endereco_funcionarios`
+-- Table structure for table `compra`
 --
 
-DROP TABLE IF EXISTS `endereco_funcionarios`;
+DROP TABLE IF EXISTS `compra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `endereco_funcionarios` (
-  `id_ENDERECO_FUNCIONARIOS` int NOT NULL AUTO_INCREMENT,
-  `cep_ENDERECO_FUNCIONARIOS` varchar(8) NOT NULL,
-  `complemento_ENDERECO_FUNCIONARIOS` varchar(45) NOT NULL,
-  `bairro_ENDERECO_FUNCIONARIOS` varchar(45) NOT NULL,
-  `casa_ENDERECO_FUNCIONARIOS` varchar(45) NOT NULL,
-  `rua_ENDERECO_FUNCIONARIOS` varchar(45) NOT NULL,
-  `funcionarios_id_funcionarios` int NOT NULL,
-  PRIMARY KEY (`id_ENDERECO_FUNCIONARIOS`,`funcionarios_id_funcionarios`),
-  UNIQUE KEY `funcionarios_id_funcionarios` (`funcionarios_id_funcionarios`),
-  KEY `fk_ENDERECO_FUNCIONARIOS_FUNCIONARIOS1_idx` (`funcionarios_id_funcionarios`),
-  CONSTRAINT `fk_ENDERECO_FUNCIONARIOS_FUNCIONARIOS1` FOREIGN KEY (`funcionarios_id_funcionarios`) REFERENCES `funcionarios` (`id_FUNCIONARIOS`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `compra` (
+  `PRODUTOS_id_PRODUTOS` int NOT NULL,
+  `PEDIDO_id_PEDIDO` int NOT NULL,
+  `quantidade_PEDIDO` int NOT NULL,
+  `valor_compra` decimal(6,2) NOT NULL,
+  PRIMARY KEY (`PRODUTOS_id_PRODUTOS`,`PEDIDO_id_PEDIDO`),
+  KEY `fk_PRODUTOS_has_PEDIDO_PEDIDO1_idx` (`PEDIDO_id_PEDIDO`),
+  KEY `fk_PRODUTOS_has_PEDIDO_PRODUTOS1_idx` (`PRODUTOS_id_PRODUTOS`),
+  CONSTRAINT `fk_PRODUTOS_has_PEDIDO_PEDIDO1` FOREIGN KEY (`PEDIDO_id_PEDIDO`) REFERENCES `pedido` (`id_PEDIDO`),
+  CONSTRAINT `fk_PRODUTOS_has_PEDIDO_PRODUTOS1` FOREIGN KEY (`PRODUTOS_id_PRODUTOS`) REFERENCES `produtos` (`id_PRODUTOS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -46,4 +44,4 @@ CREATE TABLE `endereco_funcionarios` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-12 17:50:40
+-- Dump completed on 2025-08-14 10:53:08
