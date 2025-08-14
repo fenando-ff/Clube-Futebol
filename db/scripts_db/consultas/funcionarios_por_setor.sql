@@ -1,0 +1,2 @@
+SELECT nome_FUNCIONARIOS, nome_setor_funcionarios FROM funcionarios
+inner join setor_funcionarios on id_SETOR_FUNCIONARIOS = SETOR_FUNCIONARIOS_id_SETOR_FUNCIONARIOS

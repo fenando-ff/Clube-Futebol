@@ -1,0 +1,2 @@
+select nome_funcionarios, rua_ENDERECO_FUNCIONARIOS, casa_ENDERECO_FUNCIONARIOS, bairro_ENDERECO_FUNCIONARIOS from funcionarios
+inner join endereco_funcionarios on id_funcionarios = funcionarios_id_funcionarios
