@@ -5,8 +5,6 @@ CREATE PROCEDURE mudarNomeCategoriaCliente(IN p_nomeCategoria varchar(100), IN	p
         set nome_CATEGORIA_CLIENTES = p_nomeCategoria 
         where id_CATEGORIA_CLIENTE = p_idCategoria;
 	END //
-
 DELIMITER ;
 
-CALL mudarNomeCategoriaCliente('Aguião', 4)
-
+CALL mudarNomeCategoriaCliente('Águia', 4)
